@@ -65,11 +65,18 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         if (description.length() > 25) {
             description = description.substring(0, 25) + "...";
         }
-        holder.tvTitle.setText(prd.getName());
+        String title = prd.getName();
+        if (title.length() > 10) {
+            title = title.substring(0, 10) + "...";
+        }
+        holder.tvTitle.setText(title);
         holder.tvPrice.setText(String.valueOf(prd.getPrice()));
         holder.tvDescription.setText(description);
 
-    //xu ly thêm vao gio hang
+        //xu ly thêm vao gio hang
+        FirebaseAuth.getInstance().signOut();
+//        userRef = FirebaseDatabase.getInstance().getReference("users/" + currentUser.getUid());
+//        databaseRef = FirebaseDatabase.getInstance().getReference("users/" + currentUser.getUid() + "/cart");
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser != null) {
             userRef = FirebaseDatabase.getInstance().getReference("users/" + currentUser.getUid());

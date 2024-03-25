@@ -9,6 +9,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -26,7 +27,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.Date;
 
 public class RegisterActivity extends AppCompatActivity {
-    AppCompatButton btnRegister, btnLogin;
+    AppCompatButton btnRegister;
+    TextView btnLogin;
     EditText edtName, edtEmail, edtPassword;
 
     FirebaseAuth auth;

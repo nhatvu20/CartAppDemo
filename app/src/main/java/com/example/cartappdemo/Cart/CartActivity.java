@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -40,6 +41,7 @@ public class CartActivity extends AppCompatActivity {
     RecyclerView rcvCart;
     TextView tvTotal;
     long total;
+    AppCompatButton btnCreate;
 
     ArrayList<ProductInCart> productInCarts;
 
@@ -110,6 +112,13 @@ public class CartActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent main = new Intent(CartActivity.this, ProductActivity.class);
                 startActivity(main);
+            }
+        });
+
+        btnCreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                cartRef.removeValue()
             }
         });
     }
